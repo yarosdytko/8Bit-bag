@@ -1,0 +1,4 @@
+Dimensiones matriz 27x27 cm
+espacioado entre cada fila de leds 16.666 mm
+
+Se usara una tira led de 5 metros con densidad 60 leds/metro

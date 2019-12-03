@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Switch
+        android:id="@+id/switch_bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bluetooth_on_off"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/frame_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/bluetooth_off"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/frame_ontrol"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/bt_search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:text="@string/buscar" />
+
+        <ProgressBar
+            android:id="@+id/pb_progress"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:indeterminate="true"
+            android:visibility="gone" />
+
+        <ListView
+            android:id="@+id/lv_device"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp">
+
+        </ListView>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/frame_effects_control"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_disconnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:text="@string/disconnect_device" />
+
+        <TextView
+            android:id="@+id/options_spinner_Label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_disconnect"
+            android:layout_marginTop="2dp"
+            android:text="@string/mode"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/options_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/options_spinner_Label"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:verticalScrollbarPosition="right" />
+
+        <TextView
+            android:id="@+id/extra_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/options_spinner"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:text="@string/extra_effect"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/extra_value"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/options_spinner"
+            android:layout_toRightOf="@+id/extra_option"
+            android:layout_toEndOf="@+id/extra_option"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:visibility="gone"
+            tools:ignore="LabelFor" />
+
+
+        <TextView
+            android:id="@+id/seek_Bar_Brightness_Label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/extra_value"
+            android:layout_marginTop="2dp"
+            android:text="@string/brightness"
+            android:textSize="18sp" />
+
+        <SeekBar
+            android:id="@+id/seek_Bar_Brightness"
+            style="@style/Widget.AppCompat.SeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seek_Bar_Brightness_Label"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:max="254"
+            android:progress="100"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/seek_Bar_Speed_Label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seek_Bar_Brightness"
+            android:layout_marginTop="5dp"
+            android:text="@string/speed"
+            android:textSize="18sp" />
+
+        <SeekBar
+            android:id="@+id/seek_Bar_Speed"
+            style="@style/Widget.AppCompat.SeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seek_Bar_Speed_Label"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="2dp"
+            android:max="200"
+            android:progress="100"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <Button
+            android:id="@+id/btn_effectStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seek_Bar_Speed"
+            android:text="@string/start_effect"/>
+
+        <Button
+            android:id="@+id/btn_effectStop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btn_effectStart"
+            android:layout_toEndOf="@+id/btn_effectStart"
+            android:layout_below="@+id/seek_Bar_Speed"
+            android:text="@string/stop_effect"/>
+
+        <Button
+            android:id="@+id/btn_colorSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btn_effectStop"
+            android:layout_toEndOf="@+id/btn_effectStop"
+            android:layout_below="@id/seek_Bar_Speed"
+            android:text="@string/select_color"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/text_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_effectStop"
+            android:layout_marginTop="20dp"
+            android:hint="@string/introducir_texto"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_send_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_input"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/send_text"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</LinearLayout>

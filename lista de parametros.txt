@@ -1,0 +1,26 @@
+lista de parametros
+
+$0 -> efecto seleccionado
+$1 -> brillo
+$2 -> velocidad
+$3 -> texto
+$4 -> color
+$5 -> parametro extra
+$6 -> start/stop efecto
+
+signo de inicio $
+signo de final ;
+
+
+lista de efectos:
+0 -> vacio
+1 -> nieve
+2 -> bola
+3 -> bolas
+4 -> arcoiris
+5 -> arcoiris diagonal
+6 -> fuego
+7 -> matrix
+8 -> destellos
+9 -> lluvia de estrellas
+10 -> texto

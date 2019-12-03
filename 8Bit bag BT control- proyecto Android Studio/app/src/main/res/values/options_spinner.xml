@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="effects_options">
+        <item>Elige efecto</item>
+        <item>Nieve</item>
+        <item>Bola</item>
+        <item>Bolas</item>
+        <item>Arcoiris</item>
+        <item>Arcoiris diagonal</item>
+        <item>Fuego</item>
+        <item>Matrix</item>
+        <item>Destellos</item>
+        <item>Lluvia de estrellas</item>
+        <item>Texto</item>
+    </string-array>
+</resources>
